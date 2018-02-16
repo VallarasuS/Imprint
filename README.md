@@ -6,7 +6,7 @@ Scrap Texts, Images, Links, Lists, and Tables as you browse in single click.
 Works with most of the websites. Absolutely no coding required!
 
 Use the in-built web browser to navigate through web pages, as you browse point and click on data to scrap them. 
-Be it text, image or hyper-link Maximus can figure out the reccuring items and scrap them for you. 
+Be it text, image or hyper-link Imprint can figure out the reccuring items and scrap them for you. 
 
 Use mouse pointer to highlight data elements and capture them by mouse click. It's that simple. Creat your web scraping configuration in minutes and start scraping data instantly.
 
