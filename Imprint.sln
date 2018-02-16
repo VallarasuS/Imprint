@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprint.IO.Interface", "Imprint.IO.Interface\Imprint.IO.Interface.csproj", "{836F243C-4D89-4D97-8710-84E81BA1BDD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprint.IO.Runtime", "Imprint.IO.Runtime\Imprint.IO.Runtime.csproj", "{772FB8E5-B5D5-4338-8012-5C366258E310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imprint.IO.Components", "Imprint.IO.Components\Imprint.IO.Components.csproj", "{523AEF96-0077-4394-8A5F-B5F17984484F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Debug|x64.ActiveCfg = Debug|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Debug|x64.Build.0 = Debug|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Release|Any CPU.ActiveCfg = Release|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Release|Any CPU.Build.0 = Release|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Release|Mixed Platforms.Build.0 = Release|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Release|x64.ActiveCfg = Release|x64
+		{836F243C-4D89-4D97-8710-84E81BA1BDD4}.Release|x64.Build.0 = Release|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Debug|x64.ActiveCfg = Debug|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Debug|x64.Build.0 = Debug|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Release|Any CPU.ActiveCfg = Release|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Release|Any CPU.Build.0 = Release|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Release|Mixed Platforms.Build.0 = Release|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Release|x64.ActiveCfg = Release|x64
+		{772FB8E5-B5D5-4338-8012-5C366258E310}.Release|x64.Build.0 = Release|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Debug|x64.ActiveCfg = Debug|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Debug|x64.Build.0 = Debug|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Release|Any CPU.ActiveCfg = Release|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Release|Any CPU.Build.0 = Release|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Release|Mixed Platforms.Build.0 = Release|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Release|x64.ActiveCfg = Release|x64
+		{523AEF96-0077-4394-8A5F-B5F17984484F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E60DD98-F34D-4C88-9678-48E893EB0197}
+	EndGlobalSection
+EndGlobal

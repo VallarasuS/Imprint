@@ -1,0 +1,178 @@
+﻿ <ui:MetroWindow 
+	 x:Class="Imprint.IO.Interface.MainWindow"
+	 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	 xmlns:ui="clr-namespace:Imprint.IO.Components;assembly=Imprint.IO.Components"
+	 xmlns:system="clr-namespace:System;assembly=mscorlib"
+	 Title="Imprint" 
+	 MinWidth="800"
+	 WindowState="Maximized"
+	 MinHeight="600"
+	 Background="#B3C3B9"
+	 ToolTipService.ShowOnDisabled="true">
+
+	<WindowChrome.WindowChrome>
+		<WindowChrome 
+		CaptionHeight="0"
+		ResizeBorderThickness="5" />
+	</WindowChrome.WindowChrome>
+
+	<ui:MetroWindow.Resources>
+		
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../Theme/styles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<ui:BooleanToVisibilityNegator x:Key="b2vn"/>
+
+			<BooleanToVisibilityConverter x:Key="b2v"/>
+
+		</ResourceDictionary>
+
+
+	</ui:MetroWindow.Resources>
+	
+	<Grid>
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Header - Title -->
+		<Border Grid.Row="0" Grid.Column="0" Background="#FCC230" Height="55">
+			<StackPanel Orientation="Horizontal" Margin="100,10"  VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <TextBlock Text="Imprint" FontWeight="Bold" Foreground="Maroon" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+				<Border Background="Transparent" SnapsToDevicePixels="True" Name="iconBorder" CornerRadius="3">
+					<Path Width="25" Height="25" Margin="10,0"  Stretch="Uniform" UseLayoutRounding="False" Fill="Maroon" Data="F1 M 133.242,3.82999C 133.103,2.12811 130.674,0.701721 129.535,0.36969C 109.54,-5.44736 77.5898,30.2498 70.3398,38.7362L 70.3606,38.386C 70.3763,38.2512 70.3841,38.1152 70.3841,37.9765C 70.3841,35.8977 68.6992,34.2134 66.621,34.2134C 64.5436,34.2134 62.86,35.8977 62.86,37.9765C 62.86,38.1152 62.8691,38.2512 62.8835,38.386L 62.9036,38.7362C 55.6529,30.2498 23.7012,-5.44736 3.70638,0.36969C 2.56775,0.701721 0.137329,2.12689 0,3.82999C -0.330811,7.9361 1.14774,11.3326 3.84241,13.9817C 14.5253,24.4817 11.093,34.8846 14.0865,41.6177C 15.8437,45.5721 28.8476,46.5057 25.9505,47.5474C -1.51242,57.4354 31.4427,94.563 46.8196,85.3365C 52.6581,81.8339 62.7916,64.5942 64.2238,62.1269L 64.916,74.3352C 64.916,75.2766 65.6784,76.0396 66.6197,76.0396C 67.5625,76.0396 68.3241,75.2766 68.3241,74.3352L 69.0169,62.1269C 70.4478,64.5942 80.582,81.8339 86.4205,85.3365C 101.799,94.563 134.754,57.4354 107.292,47.5474C 104.393,46.5057 117.397,45.5721 119.155,41.6177C 122.147,34.8846 118.715,24.4803 129.398,13.9817C 132.092,11.3326 133.573,7.93475 133.242,3.82999 Z "/>
+				</Border>
+
+			</StackPanel>
+		</Border>
+
+		<!-- Header - Controls - Navigation -->
+		<Border Grid.Row="0" Grid.Column="1" Background="#019FD7" Height="55">
+			<DockPanel HorizontalAlignment="Stretch" Margin="10" LastChildFill="True" VerticalAlignment="Bottom">
+
+				<Button Margin="0,0,0,0" Command="{Binding BackCommand, ElementName=browser}" Style="{DynamicResource BackButtonStyle}"/>
+				<Button Margin="0,0,0,0" Command="{Binding ForwardCommand, ElementName=browser}" Style="{DynamicResource ForwardButtonStyle}"/>
+				<Button Margin="0,0,0,0" Command="{Binding ReloadCommand, ElementName=browser}" Style="{DynamicResource RefreshButtonStyle}"/>
+
+				<Button DockPanel.Dock="Right" Margin="0,0,3,0" Command="{Binding CloseCommand, RelativeSource={RelativeSource AncestorType=ui:MetroWindow}}" Style="{DynamicResource closeButtonStyle}"/>
+				<Button DockPanel.Dock="Right" Margin="1,0,1,0" Command="{Binding RestoreCommand, RelativeSource={RelativeSource AncestorType=ui:MetroWindow}}" Style="{DynamicResource restoreButtonStyle}"/>
+				<Button DockPanel.Dock="Right" Margin="0,0,0,0" Command="{Binding MinimizeCommand, RelativeSource={RelativeSource AncestorType=ui:MetroWindow}}" Style="{DynamicResource minimizeButtonStyle}"/>
+
+				<Border CornerRadius="10" Background="White" Height="25" Margin="10,0">
+					<Grid>
+						<TextBox Name="url" Text="{Binding URL, ElementName=browser, UpdateSourceTrigger=PropertyChanged}" FontFamily="Open Sand" FontStyle="Italic" SnapsToDevicePixels="True" Margin="10,2" BorderBrush="Transparent" BorderThickness="0" VerticalAlignment="Center">
+							<TextBox.InputBindings>
+								<KeyBinding Command="{Binding LoadCommand, ElementName=browser}" Key="Return" />
+							</TextBox.InputBindings>
+						</TextBox>
+
+						<TextBlock Text="Hit enter key to load." HorizontalAlignment="Right" Foreground="Gray" FontFamily="Open Sand" FontStyle="Italic" VerticalAlignment="Center" Margin="0,0,10,0" Visibility="{Binding ElementName=url, Path=IsFocused, Converter={StaticResource ResourceKey=b2v}}"/>
+
+					</Grid>
+				</Border>
+			</DockPanel>
+		</Border>
+
+		<!-- Control Panle & Configuration -->
+		<Border Grid.Row="1" Grid.Column="0" Background="#222629">
+			<DockPanel MaxWidth="220" LastChildFill="True">
+				
+				<!-- Intro -->
+				<Border BorderBrush="Gray" BorderThickness="0,0,0,1" SnapsToDevicePixels="True" DockPanel.Dock="Top">
+					<TextBlock TextWrapping="Wrap" FontStyle="Italic" FontWeight="Bold" Margin="0,20,0,10" FontFamily="Open Sans" 
+							   Text="Navigate to any page you'd like to download data from, and right click on the content to configure scraping." Foreground="Gray"/>
+				</Border>
+
+				<!-- Options / Commands -->
+				<Border DockPanel.Dock="Top" Margin="10,10,10,0" BorderBrush="Gray" BorderThickness="0,0,0,1" SnapsToDevicePixels="True">
+					<StackPanel Orientation="Horizontal" Margin="0,3">
+
+						<Button Content="Text" Command="{Binding EnableTrackingTextCommand}" Style="{DynamicResource textGrabButtonStyle}"  Margin="5,0" Width="30" Height="30"/>
+						<Button Content="Image" Command="{Binding EnableTrackingImageCommand}" Style="{DynamicResource imageGrabButtonStyle}"  Margin="5,0" Width="30"  Height="30"/>
+						<Button Content="Url" Command="{Binding EnableTrackingURLCommand}"  Style="{DynamicResource linkGrabButtonStyle}" Margin="5,0" Width="30"  Height="30"/>
+						<Button Content="List" Command="{Binding EnableTrackingListCommand}"  Style="{DynamicResource listGrabButtonStyle}" Margin="5,0" Width="30"  Height="30"/>
+						<Button Content="Table" Command="{Binding EnableTrackingTableCommand}"  Style="{DynamicResource tableGrabButtonStyle}" Margin="5,0" Width="30"  Height="30"/>
+
+					</StackPanel>
+				</Border>
+
+				<!-- Actions / Commands -->
+				<Border DockPanel.Dock="Top" Margin="10,0" BorderBrush="Gray" SnapsToDevicePixels="True">
+					<StackPanel Orientation="Horizontal" Margin="0,3" HorizontalAlignment="Center">
+
+						<Button Content="Scroll" Command="{Binding ScrollCommand}" Style="{DynamicResource scrollButtonStyle}"  Margin="5,0" Width="30" Height="30"/>
+						<Button Content="Click" Command="{Binding EnableTrackingImageCommand}" Style="{DynamicResource clickButtonStyle}"  Margin="5,0" Width="30"  Height="30"/>
+						<Button Content="Input" Command="{Binding EnableTrackingURLCommand}"  Style="{DynamicResource inputButtonStyle}" Margin="5,0" Width="30"  Height="30"/>
+						<Button Content="Wait" Command="{Binding EnableTrackingListCommand}"  Style="{DynamicResource waitButtonStyle}" Margin="5,0" Width="30"  Height="30"/>
+
+					</StackPanel>
+				</Border>
+
+				<!-- Bottom Pane - Extract Button -->
+				<DockPanel DockPanel.Dock="Bottom" Margin="10,15" LastChildFill="False">
+					<Button Style="{DynamicResource extractButtonStyle}"  DockPanel.Dock="Right" Command="{Binding FectchConfiguredDataCommand}"/>
+				</DockPanel>
+
+				<!-- Configuration Elements -->
+				<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+
+					<ItemsControl Name="fields" Background="#222629" HorizontalAlignment="Stretch" ItemsSource="{Binding ConfigurationViewViewModel.Elements}">
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+							
+								<Border SnapsToDevicePixels="True" Margin="3" CornerRadius="5" BorderThickness="1" BorderBrush="#090A0A">
+									<Border BorderThickness="1" CornerRadius="3"  BorderBrush="#444C4E" Background="#222627">
+										
+										<DockPanel LastChildFill="True">
+											<ToggleButton DockPanel.Dock="Right" Name="editButton"  Style="{StaticResource editButtonStyle}" VerticalAlignment="Center" Margin="5,0"/>
+											<Grid DockPanel.Dock="Left"  >
+												<TextBlock Name="text"  Text="{Binding Header}" FontWeight="Bold" FontSize="12" FontFamily="Open Sans" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+												<TextBox Name="edit" Visibility="Hidden" Text="{Binding Header}" FontWeight="Bold" FontSize="12" FontFamily="Open Sans" Foreground="Black" HorizontalAlignment="Left" Width="150"  VerticalAlignment="Center" Margin="10"/>
+											</Grid>
+										</DockPanel>
+										
+									</Border>
+								</Border>
+							
+								<DataTemplate.Triggers>
+									<DataTrigger Binding="{Binding ElementName=editButton, Path=IsChecked}" Value="True">
+										<Setter Property="Visibility" Value="Hidden" TargetName="text"/>
+										<Setter Property="Visibility" Value="Visible" TargetName="edit"/>
+									</DataTrigger>
+								</DataTemplate.Triggers>
+
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+
+				</ScrollViewer>
+				
+			</DockPanel>
+		</Border>
+
+		<!-- Embedded Browser -->
+		<Border Grid.Row="1" Grid.Column="1">
+			<ui:WebBrowser x:Name="browser"/>
+		</Border>
+
+		<!-- Status Panel -->
+		<Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+			<StackPanel Name="statusPanel"/>
+		</Border>
+		
+	</Grid>
+	
+</ui:MetroWindow>
