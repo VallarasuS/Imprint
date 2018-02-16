@@ -10,6 +10,8 @@ Be it text, image or hyper-link Maximus can figure out the reccuring items and s
 
 Use mouse pointer to highlight data elements and capture them by mouse click. It's that simple. Creat your web scraping configuration in minutes and start scraping data instantly.
 
+![Imprint - Scrap data in CSV format](/images/home_data_csv.png)
+
 ## Dependencies
 * [CefSharp](https://github.com/cefsharp/CefSharp)
 * [XPath](https://gist.github.com/nfeldman/10792041) by [Noah Feldman](https://gist.github.com/nfeldman)
